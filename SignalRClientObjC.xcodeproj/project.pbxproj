@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		384DFB71151023C9A3969FB2 /* libPods-SignalRClientObjCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BCD9213884E93EC1567D75 /* libPods-SignalRClientObjCTests.a */; };
+		934745691A7360CA00822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
+		9347456A1A7372D700822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
+		936F0A0C1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */; };
+		93E18E131A70EAE0008DD86A /* libSignalRClientObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */; };
+		93E18E321A70EB11008DD86A /* SRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E241A70EB11008DD86A /* SRConnection.m */; };
+		93E18E331A70EB11008DD86A /* SRConnectionExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E261A70EB11008DD86A /* SRConnectionExtensions.m */; };
+		93E18E341A70EB11008DD86A /* SRHeartbeatMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E2A1A70EB11008DD86A /* SRHeartbeatMonitor.m */; };
+		93E18E351A70EB11008DD86A /* SRKeepAliveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E2C1A70EB11008DD86A /* SRKeepAliveData.m */; };
+		93E18E361A70EB11008DD86A /* SRNegotiationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E2E1A70EB11008DD86A /* SRNegotiationResponse.m */; };
+		93E18E4C1A70EB41008DD86A /* SRHubConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E3C1A70EB41008DD86A /* SRHubConnection.m */; };
+		93E18E4D1A70EB41008DD86A /* SRHubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E3F1A70EB41008DD86A /* SRHubProxy.m */; };
+		93E18E4E1A70EB41008DD86A /* SRHubProxyExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E411A70EB41008DD86A /* SRHubProxyExtensions.m */; };
+		93E18E4F1A70EB41008DD86A /* SRHubInvocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E431A70EB41008DD86A /* SRHubInvocation.m */; };
+		93E18E501A70EB41008DD86A /* SRHubRegistrationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E451A70EB41008DD86A /* SRHubRegistrationData.m */; };
+		93E18E511A70EB41008DD86A /* SRHubResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E471A70EB41008DD86A /* SRHubResult.m */; };
+		93E18E521A70EB41008DD86A /* SRHubservable.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E491A70EB41008DD86A /* SRHubservable.m */; };
+		93E18E531A70EB41008DD86A /* SRSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E4B1A70EB41008DD86A /* SRSubscription.m */; };
+		93E18E6B1A70EBBE008DD86A /* SRHttpBasedTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E621A70EBBE008DD86A /* SRHttpBasedTransport.m */; };
+		93E18E6C1A70EBBE008DD86A /* SRAutoTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E641A70EBBE008DD86A /* SRAutoTransport.m */; };
+		93E18E6D1A70EBBE008DD86A /* SRLongPollingTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E661A70EBBE008DD86A /* SRLongPollingTransport.m */; };
+		93E18E6E1A70EBBE008DD86A /* SRServerSentEventsTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E681A70EBBE008DD86A /* SRServerSentEventsTransport.m */; };
+		93E18E6F1A70EBBE008DD86A /* SRWebSocketTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E6A1A70EBBE008DD86A /* SRWebSocketTransport.m */; };
+		93E18E751A70EC18008DD86A /* SRWebSocketConnectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E741A70EC18008DD86A /* SRWebSocketConnectionInfo.m */; };
+		93E18E7C1A70EC22008DD86A /* SRChunkBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E771A70EC22008DD86A /* SRChunkBuffer.m */; };
+		93E18E7D1A70EC22008DD86A /* SREventSourceStreamReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E791A70EC22008DD86A /* SREventSourceStreamReader.m */; };
+		93E18E7E1A70EC22008DD86A /* SRServerSentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E7B1A70EC22008DD86A /* SRServerSentEvent.m */; };
+		93E18E931A70ECA4008DD86A /* NSObject+SRJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E8C1A70ECA4008DD86A /* NSObject+SRJSON.m */; };
+		93E18E941A70ECA4008DD86A /* SRExceptionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E8F1A70ECA4008DD86A /* SRExceptionHelper.m */; };
+		93E18E951A70ECA4008DD86A /* SRVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E921A70ECA4008DD86A /* SRVersion.m */; };
+		ED367067000A0014874FB067 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA794364A0D7E2476ED4134B /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93E18E141A70EAE0008DD86A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E18DFF1A70EAE0008DD86A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93E18E061A70EAE0008DD86A;
+			remoteInfo = SignalRClientObjC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		93E18E051A70EAE0008DD86A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		280452D851E055063089A1B8 /* Pods-SignalRClientObjCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalRClientObjCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalRClientObjCTests/Pods-SignalRClientObjCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		29209B79725ED7ACBE4B91A4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		934745681A7360CA00822A5D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocketTransportSpec.m; sourceTree = "<group>"; };
+		93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSignalRClientObjC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E18E121A70EAE0008DD86A /* SignalRClientObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRClientObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E18E181A70EAE0008DD86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E18E211A70EB11008DD86A /* SignalR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalR.h; sourceTree = "<group>"; };
+		93E18E221A70EB11008DD86A /* SRConnectionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConnectionInterface.h; sourceTree = "<group>"; };
+		93E18E231A70EB11008DD86A /* SRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConnection.h; sourceTree = "<group>"; };
+		93E18E241A70EB11008DD86A /* SRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConnection.m; sourceTree = "<group>"; };
+		93E18E251A70EB11008DD86A /* SRConnectionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConnectionExtensions.h; sourceTree = "<group>"; };
+		93E18E261A70EB11008DD86A /* SRConnectionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConnectionExtensions.m; sourceTree = "<group>"; };
+		93E18E271A70EB11008DD86A /* SRConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConnectionDelegate.h; sourceTree = "<group>"; };
+		93E18E281A70EB11008DD86A /* SRConnectionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConnectionState.h; sourceTree = "<group>"; };
+		93E18E291A70EB11008DD86A /* SRHeartbeatMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHeartbeatMonitor.h; sourceTree = "<group>"; };
+		93E18E2A1A70EB11008DD86A /* SRHeartbeatMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHeartbeatMonitor.m; sourceTree = "<group>"; };
+		93E18E2B1A70EB11008DD86A /* SRKeepAliveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeepAliveData.h; sourceTree = "<group>"; };
+		93E18E2C1A70EB11008DD86A /* SRKeepAliveData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeepAliveData.m; sourceTree = "<group>"; };
+		93E18E2D1A70EB11008DD86A /* SRNegotiationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNegotiationResponse.h; sourceTree = "<group>"; };
+		93E18E2E1A70EB11008DD86A /* SRNegotiationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNegotiationResponse.m; sourceTree = "<group>"; };
+		93E18E2F1A70EB11008DD86A /* SRLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLog.h; sourceTree = "<group>"; };
+		93E18E391A70EB41008DD86A /* SRHubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubs.h; sourceTree = "<group>"; };
+		93E18E3A1A70EB41008DD86A /* SRHubConnectionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubConnectionInterface.h; sourceTree = "<group>"; };
+		93E18E3B1A70EB41008DD86A /* SRHubConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubConnection.h; sourceTree = "<group>"; };
+		93E18E3C1A70EB41008DD86A /* SRHubConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubConnection.m; sourceTree = "<group>"; };
+		93E18E3D1A70EB41008DD86A /* SRHubProxyInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubProxyInterface.h; sourceTree = "<group>"; };
+		93E18E3E1A70EB41008DD86A /* SRHubProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubProxy.h; sourceTree = "<group>"; };
+		93E18E3F1A70EB41008DD86A /* SRHubProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubProxy.m; sourceTree = "<group>"; };
+		93E18E401A70EB41008DD86A /* SRHubProxyExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubProxyExtensions.h; sourceTree = "<group>"; };
+		93E18E411A70EB41008DD86A /* SRHubProxyExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubProxyExtensions.m; sourceTree = "<group>"; };
+		93E18E421A70EB41008DD86A /* SRHubInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubInvocation.h; sourceTree = "<group>"; };
+		93E18E431A70EB41008DD86A /* SRHubInvocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubInvocation.m; sourceTree = "<group>"; };
+		93E18E441A70EB41008DD86A /* SRHubRegistrationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubRegistrationData.h; sourceTree = "<group>"; };
+		93E18E451A70EB41008DD86A /* SRHubRegistrationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubRegistrationData.m; sourceTree = "<group>"; };
+		93E18E461A70EB41008DD86A /* SRHubResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubResult.h; sourceTree = "<group>"; };
+		93E18E471A70EB41008DD86A /* SRHubResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubResult.m; sourceTree = "<group>"; };
+		93E18E481A70EB41008DD86A /* SRHubservable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHubservable.h; sourceTree = "<group>"; };
+		93E18E491A70EB41008DD86A /* SRHubservable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHubservable.m; sourceTree = "<group>"; };
+		93E18E4A1A70EB41008DD86A /* SRSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSubscription.h; sourceTree = "<group>"; };
+		93E18E4B1A70EB41008DD86A /* SRSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSubscription.m; sourceTree = "<group>"; };
+		93E18E601A70EBBE008DD86A /* SRClientTransportInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRClientTransportInterface.h; sourceTree = "<group>"; };
+		93E18E611A70EBBE008DD86A /* SRHttpBasedTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHttpBasedTransport.h; sourceTree = "<group>"; };
+		93E18E621A70EBBE008DD86A /* SRHttpBasedTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHttpBasedTransport.m; sourceTree = "<group>"; };
+		93E18E631A70EBBE008DD86A /* SRAutoTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAutoTransport.h; sourceTree = "<group>"; };
+		93E18E641A70EBBE008DD86A /* SRAutoTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRAutoTransport.m; sourceTree = "<group>"; };
+		93E18E651A70EBBE008DD86A /* SRLongPollingTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLongPollingTransport.h; sourceTree = "<group>"; };
+		93E18E661A70EBBE008DD86A /* SRLongPollingTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLongPollingTransport.m; sourceTree = "<group>"; };
+		93E18E671A70EBBE008DD86A /* SRServerSentEventsTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRServerSentEventsTransport.h; sourceTree = "<group>"; };
+		93E18E681A70EBBE008DD86A /* SRServerSentEventsTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRServerSentEventsTransport.m; sourceTree = "<group>"; };
+		93E18E691A70EBBE008DD86A /* SRWebSocketTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocketTransport.h; sourceTree = "<group>"; };
+		93E18E6A1A70EBBE008DD86A /* SRWebSocketTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocketTransport.m; sourceTree = "<group>"; };
+		93E18E731A70EC18008DD86A /* SRWebSocketConnectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocketConnectionInfo.h; sourceTree = "<group>"; };
+		93E18E741A70EC18008DD86A /* SRWebSocketConnectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocketConnectionInfo.m; sourceTree = "<group>"; };
+		93E18E761A70EC22008DD86A /* SRChunkBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRChunkBuffer.h; sourceTree = "<group>"; };
+		93E18E771A70EC22008DD86A /* SRChunkBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRChunkBuffer.m; sourceTree = "<group>"; };
+		93E18E781A70EC22008DD86A /* SREventSourceStreamReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREventSourceStreamReader.h; sourceTree = "<group>"; };
+		93E18E791A70EC22008DD86A /* SREventSourceStreamReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREventSourceStreamReader.m; sourceTree = "<group>"; };
+		93E18E7A1A70EC22008DD86A /* SRServerSentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRServerSentEvent.h; sourceTree = "<group>"; };
+		93E18E7B1A70EC22008DD86A /* SRServerSentEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRServerSentEvent.m; sourceTree = "<group>"; };
+		93E18E8B1A70ECA4008DD86A /* NSObject+SRJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SRJSON.h"; sourceTree = "<group>"; };
+		93E18E8C1A70ECA4008DD86A /* NSObject+SRJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SRJSON.m"; sourceTree = "<group>"; };
+		93E18E8D1A70ECA4008DD86A /* SRDeserializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDeserializable.h; sourceTree = "<group>"; };
+		93E18E8E1A70ECA4008DD86A /* SRExceptionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRExceptionHelper.h; sourceTree = "<group>"; };
+		93E18E8F1A70ECA4008DD86A /* SRExceptionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRExceptionHelper.m; sourceTree = "<group>"; };
+		93E18E901A70ECA4008DD86A /* SRSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSerializable.h; sourceTree = "<group>"; };
+		93E18E911A70ECA4008DD86A /* SRVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVersion.h; sourceTree = "<group>"; };
+		93E18E921A70ECA4008DD86A /* SRVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVersion.m; sourceTree = "<group>"; };
+		AB34E7049B08B0E3004BEE9B /* Pods-SignalRClientObjCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalRClientObjCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignalRClientObjCTests/Pods-SignalRClientObjCTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA794364A0D7E2476ED4134B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BABBF4761719FF2D855053F0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F2BCD9213884E93EC1567D75 /* libPods-SignalRClientObjCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SignalRClientObjCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93E18E041A70EAE0008DD86A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				934745691A7360CA00822A5D /* libicucore.dylib in Frameworks */,
+				ED367067000A0014874FB067 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E18E0F1A70EAE0008DD86A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9347456A1A7372D700822A5D /* libicucore.dylib in Frameworks */,
+				93E18E131A70EAE0008DD86A /* libSignalRClientObjC.a in Frameworks */,
+				384DFB71151023C9A3969FB2 /* libPods-SignalRClientObjCTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		527B574959A370A30A2ECC7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29209B79725ED7ACBE4B91A4 /* Pods.debug.xcconfig */,
+				BABBF4761719FF2D855053F0 /* Pods.release.xcconfig */,
+				280452D851E055063089A1B8 /* Pods-SignalRClientObjCTests.debug.xcconfig */,
+				AB34E7049B08B0E3004BEE9B /* Pods-SignalRClientObjCTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		936F0A0A1A70F08200FD20B7 /* Transports */ = {
+			isa = PBXGroup;
+			children = (
+				936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */,
+			);
+			name = Transports;
+			sourceTree = "<group>";
+		};
+		93E18DFE1A70EAE0008DD86A = {
+			isa = PBXGroup;
+			children = (
+				93E18E091A70EAE0008DD86A /* SignalRClientObjC */,
+				93E18E161A70EAE0008DD86A /* SignalRClientObjCTests */,
+				93E18E081A70EAE0008DD86A /* Products */,
+				527B574959A370A30A2ECC7C /* Pods */,
+				E382763F42479C4B4AD8867B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		93E18E081A70EAE0008DD86A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */,
+				93E18E121A70EAE0008DD86A /* SignalRClientObjCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93E18E091A70EAE0008DD86A /* SignalRClientObjC */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E8A1A70EC85008DD86A /* Infrastructure */,
+				93E18E5F1A70EB69008DD86A /* Transports */,
+				93E18E381A70EB1F008DD86A /* Hubs */,
+				93E18E211A70EB11008DD86A /* SignalR.h */,
+				93E18E221A70EB11008DD86A /* SRConnectionInterface.h */,
+				93E18E231A70EB11008DD86A /* SRConnection.h */,
+				93E18E241A70EB11008DD86A /* SRConnection.m */,
+				93E18E251A70EB11008DD86A /* SRConnectionExtensions.h */,
+				93E18E261A70EB11008DD86A /* SRConnectionExtensions.m */,
+				93E18E271A70EB11008DD86A /* SRConnectionDelegate.h */,
+				93E18E281A70EB11008DD86A /* SRConnectionState.h */,
+				93E18E291A70EB11008DD86A /* SRHeartbeatMonitor.h */,
+				93E18E2A1A70EB11008DD86A /* SRHeartbeatMonitor.m */,
+				93E18E2B1A70EB11008DD86A /* SRKeepAliveData.h */,
+				93E18E2C1A70EB11008DD86A /* SRKeepAliveData.m */,
+				93E18E2D1A70EB11008DD86A /* SRNegotiationResponse.h */,
+				93E18E2E1A70EB11008DD86A /* SRNegotiationResponse.m */,
+				93E18E2F1A70EB11008DD86A /* SRLog.h */,
+			);
+			path = SignalRClientObjC;
+			sourceTree = "<group>";
+		};
+		93E18E161A70EAE0008DD86A /* SignalRClientObjCTests */ = {
+			isa = PBXGroup;
+			children = (
+				936F0A0A1A70F08200FD20B7 /* Transports */,
+				93E18E171A70EAE0008DD86A /* Supporting Files */,
+			);
+			path = SignalRClientObjCTests;
+			sourceTree = "<group>";
+		};
+		93E18E171A70EAE0008DD86A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E181A70EAE0008DD86A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93E18E381A70EB1F008DD86A /* Hubs */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E391A70EB41008DD86A /* SRHubs.h */,
+				93E18E3A1A70EB41008DD86A /* SRHubConnectionInterface.h */,
+				93E18E3B1A70EB41008DD86A /* SRHubConnection.h */,
+				93E18E3C1A70EB41008DD86A /* SRHubConnection.m */,
+				93E18E3D1A70EB41008DD86A /* SRHubProxyInterface.h */,
+				93E18E3E1A70EB41008DD86A /* SRHubProxy.h */,
+				93E18E3F1A70EB41008DD86A /* SRHubProxy.m */,
+				93E18E401A70EB41008DD86A /* SRHubProxyExtensions.h */,
+				93E18E411A70EB41008DD86A /* SRHubProxyExtensions.m */,
+				93E18E421A70EB41008DD86A /* SRHubInvocation.h */,
+				93E18E431A70EB41008DD86A /* SRHubInvocation.m */,
+				93E18E441A70EB41008DD86A /* SRHubRegistrationData.h */,
+				93E18E451A70EB41008DD86A /* SRHubRegistrationData.m */,
+				93E18E461A70EB41008DD86A /* SRHubResult.h */,
+				93E18E471A70EB41008DD86A /* SRHubResult.m */,
+				93E18E481A70EB41008DD86A /* SRHubservable.h */,
+				93E18E491A70EB41008DD86A /* SRHubservable.m */,
+				93E18E4A1A70EB41008DD86A /* SRSubscription.h */,
+				93E18E4B1A70EB41008DD86A /* SRSubscription.m */,
+			);
+			name = Hubs;
+			sourceTree = "<group>";
+		};
+		93E18E5F1A70EB69008DD86A /* Transports */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E721A70EBF8008DD86A /* WebSockets */,
+				93E18E711A70EBED008DD86A /* ServerSentEvents */,
+				93E18E701A70EBE2008DD86A /* LongPolling */,
+				93E18E601A70EBBE008DD86A /* SRClientTransportInterface.h */,
+				93E18E611A70EBBE008DD86A /* SRHttpBasedTransport.h */,
+				93E18E621A70EBBE008DD86A /* SRHttpBasedTransport.m */,
+				93E18E631A70EBBE008DD86A /* SRAutoTransport.h */,
+				93E18E641A70EBBE008DD86A /* SRAutoTransport.m */,
+				93E18E651A70EBBE008DD86A /* SRLongPollingTransport.h */,
+				93E18E661A70EBBE008DD86A /* SRLongPollingTransport.m */,
+				93E18E671A70EBBE008DD86A /* SRServerSentEventsTransport.h */,
+				93E18E681A70EBBE008DD86A /* SRServerSentEventsTransport.m */,
+				93E18E691A70EBBE008DD86A /* SRWebSocketTransport.h */,
+				93E18E6A1A70EBBE008DD86A /* SRWebSocketTransport.m */,
+			);
+			name = Transports;
+			sourceTree = "<group>";
+		};
+		93E18E701A70EBE2008DD86A /* LongPolling */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LongPolling;
+			sourceTree = "<group>";
+		};
+		93E18E711A70EBED008DD86A /* ServerSentEvents */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E761A70EC22008DD86A /* SRChunkBuffer.h */,
+				93E18E771A70EC22008DD86A /* SRChunkBuffer.m */,
+				93E18E781A70EC22008DD86A /* SREventSourceStreamReader.h */,
+				93E18E791A70EC22008DD86A /* SREventSourceStreamReader.m */,
+				93E18E7A1A70EC22008DD86A /* SRServerSentEvent.h */,
+				93E18E7B1A70EC22008DD86A /* SRServerSentEvent.m */,
+			);
+			name = ServerSentEvents;
+			sourceTree = "<group>";
+		};
+		93E18E721A70EBF8008DD86A /* WebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E731A70EC18008DD86A /* SRWebSocketConnectionInfo.h */,
+				93E18E741A70EC18008DD86A /* SRWebSocketConnectionInfo.m */,
+			);
+			name = WebSockets;
+			sourceTree = "<group>";
+		};
+		93E18E8A1A70EC85008DD86A /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				93E18E8B1A70ECA4008DD86A /* NSObject+SRJSON.h */,
+				93E18E8C1A70ECA4008DD86A /* NSObject+SRJSON.m */,
+				93E18E8D1A70ECA4008DD86A /* SRDeserializable.h */,
+				93E18E8E1A70ECA4008DD86A /* SRExceptionHelper.h */,
+				93E18E8F1A70ECA4008DD86A /* SRExceptionHelper.m */,
+				93E18E901A70ECA4008DD86A /* SRSerializable.h */,
+				93E18E911A70ECA4008DD86A /* SRVersion.h */,
+				93E18E921A70ECA4008DD86A /* SRVersion.m */,
+			);
+			name = Infrastructure;
+			sourceTree = "<group>";
+		};
+		E382763F42479C4B4AD8867B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				934745681A7360CA00822A5D /* libicucore.dylib */,
+				BA794364A0D7E2476ED4134B /* libPods.a */,
+				F2BCD9213884E93EC1567D75 /* libPods-SignalRClientObjCTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93E18E061A70EAE0008DD86A /* SignalRClientObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E18E1B1A70EAE0008DD86A /* Build configuration list for PBXNativeTarget "SignalRClientObjC" */;
+			buildPhases = (
+				3D22D54A2AE54E129D0ED407 /* Check Pods Manifest.lock */,
+				93E18E031A70EAE0008DD86A /* Sources */,
+				93E18E041A70EAE0008DD86A /* Frameworks */,
+				93E18E051A70EAE0008DD86A /* CopyFiles */,
+				37C357249BC642D3BD4750CF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SignalRClientObjC;
+			productName = SignalRClientObjC;
+			productReference = 93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		93E18E111A70EAE0008DD86A /* SignalRClientObjCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E18E1E1A70EAE0008DD86A /* Build configuration list for PBXNativeTarget "SignalRClientObjCTests" */;
+			buildPhases = (
+				EB5983AA6C07F66B67D92BF4 /* Check Pods Manifest.lock */,
+				93E18E0E1A70EAE0008DD86A /* Sources */,
+				93E18E0F1A70EAE0008DD86A /* Frameworks */,
+				93E18E101A70EAE0008DD86A /* Resources */,
+				00270E0D9C2650976C0A20A4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93E18E151A70EAE0008DD86A /* PBXTargetDependency */,
+			);
+			name = SignalRClientObjCTests;
+			productName = SignalRClientObjCTests;
+			productReference = 93E18E121A70EAE0008DD86A /* SignalRClientObjCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93E18DFF1A70EAE0008DD86A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = SignalR;
+				TargetAttributes = {
+					93E18E061A70EAE0008DD86A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					93E18E111A70EAE0008DD86A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 93E18E021A70EAE0008DD86A /* Build configuration list for PBXProject "SignalRClientObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 93E18DFE1A70EAE0008DD86A;
+			productRefGroup = 93E18E081A70EAE0008DD86A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93E18E061A70EAE0008DD86A /* SignalRClientObjC */,
+				93E18E111A70EAE0008DD86A /* SignalRClientObjCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93E18E101A70EAE0008DD86A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00270E0D9C2650976C0A20A4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalRClientObjCTests/Pods-SignalRClientObjCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37C357249BC642D3BD4750CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D22D54A2AE54E129D0ED407 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB5983AA6C07F66B67D92BF4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93E18E031A70EAE0008DD86A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E18E6D1A70EBBE008DD86A /* SRLongPollingTransport.m in Sources */,
+				93E18E6C1A70EBBE008DD86A /* SRAutoTransport.m in Sources */,
+				93E18E521A70EB41008DD86A /* SRHubservable.m in Sources */,
+				93E18E4D1A70EB41008DD86A /* SRHubProxy.m in Sources */,
+				93E18E6B1A70EBBE008DD86A /* SRHttpBasedTransport.m in Sources */,
+				93E18E4C1A70EB41008DD86A /* SRHubConnection.m in Sources */,
+				93E18E351A70EB11008DD86A /* SRKeepAliveData.m in Sources */,
+				93E18E6E1A70EBBE008DD86A /* SRServerSentEventsTransport.m in Sources */,
+				93E18E341A70EB11008DD86A /* SRHeartbeatMonitor.m in Sources */,
+				93E18E511A70EB41008DD86A /* SRHubResult.m in Sources */,
+				93E18E7D1A70EC22008DD86A /* SREventSourceStreamReader.m in Sources */,
+				93E18E951A70ECA4008DD86A /* SRVersion.m in Sources */,
+				93E18E751A70EC18008DD86A /* SRWebSocketConnectionInfo.m in Sources */,
+				93E18E4F1A70EB41008DD86A /* SRHubInvocation.m in Sources */,
+				93E18E531A70EB41008DD86A /* SRSubscription.m in Sources */,
+				93E18E7C1A70EC22008DD86A /* SRChunkBuffer.m in Sources */,
+				93E18E4E1A70EB41008DD86A /* SRHubProxyExtensions.m in Sources */,
+				93E18E501A70EB41008DD86A /* SRHubRegistrationData.m in Sources */,
+				93E18E321A70EB11008DD86A /* SRConnection.m in Sources */,
+				93E18E361A70EB11008DD86A /* SRNegotiationResponse.m in Sources */,
+				93E18E941A70ECA4008DD86A /* SRExceptionHelper.m in Sources */,
+				93E18E931A70ECA4008DD86A /* NSObject+SRJSON.m in Sources */,
+				93E18E6F1A70EBBE008DD86A /* SRWebSocketTransport.m in Sources */,
+				93E18E7E1A70EC22008DD86A /* SRServerSentEvent.m in Sources */,
+				93E18E331A70EB11008DD86A /* SRConnectionExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E18E0E1A70EAE0008DD86A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				936F0A0C1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93E18E151A70EAE0008DD86A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93E18E061A70EAE0008DD86A /* SignalRClientObjC */;
+			targetProxy = 93E18E141A70EAE0008DD86A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		93E18E191A70EAE0008DD86A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		93E18E1A1A70EAE0008DD86A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93E18E1C1A70EAE0008DD86A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29209B79725ED7ACBE4B91A4 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		93E18E1D1A70EAE0008DD86A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BABBF4761719FF2D855053F0 /* Pods.release.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		93E18E1F1A70EAE0008DD86A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280452D851E055063089A1B8 /* Pods-SignalRClientObjCTests.debug.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SignalRClientObjCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"XCTest\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		93E18E201A70EAE0008DD86A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB34E7049B08B0E3004BEE9B /* Pods-SignalRClientObjCTests.release.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SignalRClientObjCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"XCTest\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93E18E021A70EAE0008DD86A /* Build configuration list for PBXProject "SignalRClientObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E18E191A70EAE0008DD86A /* Debug */,
+				93E18E1A1A70EAE0008DD86A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E18E1B1A70EAE0008DD86A /* Build configuration list for PBXNativeTarget "SignalRClientObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E18E1C1A70EAE0008DD86A /* Debug */,
+				93E18E1D1A70EAE0008DD86A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E18E1E1A70EAE0008DD86A /* Build configuration list for PBXNativeTarget "SignalRClientObjCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E18E1F1A70EAE0008DD86A /* Debug */,
+				93E18E201A70EAE0008DD86A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93E18DFF1A70EAE0008DD86A /* Project object */;
+}
