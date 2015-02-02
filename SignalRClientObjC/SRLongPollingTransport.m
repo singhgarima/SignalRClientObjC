@@ -45,6 +45,12 @@
     return self;
 }
 
+- (instancetype)initWithNetworking:(id <SignalRNetworking>)aNetworking {
+    SRLongPollingTransport *transport = [[SRLongPollingTransport alloc] init];
+    transport.networking = aNetworking;
+    return transport;
+}
+
 #pragma mark 
 #pragma mark SRClientTransportInterface
 

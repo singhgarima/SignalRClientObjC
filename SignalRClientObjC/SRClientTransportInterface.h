@@ -21,6 +21,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignalRNetworking.h"
 
 @protocol SRConnectionInterface;
 @class SRNegotiationResponse;
@@ -31,6 +32,7 @@
 @protocol SRClientTransportInterface <NSObject>
 
 @property (strong, nonatomic, readonly) NSString *name;
+@property (strong, nonatomic) id<SignalRNetworking> networking;
 @property (assign, nonatomic, readonly) BOOL supportsKeepAlive;
 
 - (void)negotiate:(id <SRConnectionInterface>)connection connectionData:(NSString *)connectionData completionHandler:(void (^)(SRNegotiationResponse *response, NSError *error))block;

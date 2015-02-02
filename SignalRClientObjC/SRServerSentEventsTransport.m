@@ -83,6 +83,12 @@ typedef void (^SRCompletionHandler)(id response, NSError *error);
     return self;
 }
 
+- (instancetype)initWithNetworking:(id <SignalRNetworking>)aNetworking {
+    SRServerSentEventsTransport *transport = [[SRServerSentEventsTransport alloc] init];
+    transport.networking = aNetworking;
+    return transport;
+}
+
 #pragma mark
 #pragma mark SRClientTransportInterface
 

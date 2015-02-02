@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		384DFB71151023C9A3969FB2 /* libPods-SignalRClientObjCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BCD9213884E93EC1567D75 /* libPods-SignalRClientObjCTests.a */; };
+		932268461A7FB20700BC57E2 /* SignalRNetworkingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268451A7FB20700BC57E2 /* SignalRNetworkingSpec.m */; };
+		932268481A7FB26900BC57E2 /* SignalRAFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268471A7FB26900BC57E2 /* SignalRAFNetworking.m */; };
+		9322684B1A7FBD8F00BC57E2 /* SRHttpBasedTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322684A1A7FBD8F00BC57E2 /* SRHttpBasedTransportSpec.m */; };
+		9322684D1A7FBE8E00BC57E2 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322684C1A7FBE8E00BC57E2 /* Utilities.m */; };
+		932268501A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */; };
+		932268521A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */; };
 		934745691A7360CA00822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
 		9347456A1A7372D700822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
 		9347456C1A7778AE00822A5D /* SRAutoTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */; };
@@ -66,9 +72,18 @@
 /* Begin PBXFileReference section */
 		280452D851E055063089A1B8 /* Pods-SignalRClientObjCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalRClientObjCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalRClientObjCTests/Pods-SignalRClientObjCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		29209B79725ED7ACBE4B91A4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		932268441A7FACB600BC57E2 /* SignalRNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalRNetworking.h; sourceTree = "<group>"; };
+		932268451A7FB20700BC57E2 /* SignalRNetworkingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalRNetworkingSpec.m; sourceTree = "<group>"; };
+		932268471A7FB26900BC57E2 /* SignalRAFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalRAFNetworking.m; sourceTree = "<group>"; };
+		932268491A7FB27E00BC57E2 /* SignalRAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalRAFNetworking.h; sourceTree = "<group>"; };
+		9322684A1A7FBD8F00BC57E2 /* SRHttpBasedTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRHttpBasedTransportSpec.m; path = Transports/SRHttpBasedTransportSpec.m; sourceTree = "<group>"; };
+		9322684C1A7FBE8E00BC57E2 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		9322684E1A7FBF9500BC57E2 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRLongPollingTransportSpec.m; path = Transports/SRLongPollingTransportSpec.m; sourceTree = "<group>"; };
+		932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRServerSentEventsTransportSpec.m; path = Transports/SRServerSentEventsTransportSpec.m; sourceTree = "<group>"; };
 		934745681A7360CA00822A5D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRAutoTransportSpec.m; path = Transports/SRAutoTransportSpec.m; sourceTree = "<group>"; };
-		936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocketTransportSpec.m; sourceTree = "<group>"; };
+		936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRWebSocketTransportSpec.m; path = Transports/SRWebSocketTransportSpec.m; sourceTree = "<group>"; };
 		93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSignalRClientObjC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E18E121A70EAE0008DD86A /* SignalRClientObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRClientObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E18E181A70EAE0008DD86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,6 +193,9 @@
 			children = (
 				936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */,
 				9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */,
+				9322684A1A7FBD8F00BC57E2 /* SRHttpBasedTransportSpec.m */,
+				9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */,
+				932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */,
 			);
 			name = Transports;
 			sourceTree = "<group>";
@@ -223,6 +241,9 @@
 				93E18E2D1A70EB11008DD86A /* SRNegotiationResponse.h */,
 				93E18E2E1A70EB11008DD86A /* SRNegotiationResponse.m */,
 				93E18E2F1A70EB11008DD86A /* SRLog.h */,
+				932268441A7FACB600BC57E2 /* SignalRNetworking.h */,
+				932268471A7FB26900BC57E2 /* SignalRAFNetworking.m */,
+				932268491A7FB27E00BC57E2 /* SignalRAFNetworking.h */,
 			);
 			path = SignalRClientObjC;
 			sourceTree = "<group>";
@@ -232,6 +253,9 @@
 			children = (
 				936F0A0A1A70F08200FD20B7 /* Transports */,
 				93E18E171A70EAE0008DD86A /* Supporting Files */,
+				932268451A7FB20700BC57E2 /* SignalRNetworkingSpec.m */,
+				9322684C1A7FBE8E00BC57E2 /* Utilities.m */,
+				9322684E1A7FBF9500BC57E2 /* Utilities.h */,
 			);
 			path = SignalRClientObjCTests;
 			sourceTree = "<group>";
@@ -524,6 +548,7 @@
 				93E18E931A70ECA4008DD86A /* NSObject+SRJSON.m in Sources */,
 				93E18E6F1A70EBBE008DD86A /* SRWebSocketTransport.m in Sources */,
 				93E18E7E1A70EC22008DD86A /* SRServerSentEvent.m in Sources */,
+				932268481A7FB26900BC57E2 /* SignalRAFNetworking.m in Sources */,
 				93E18E331A70EB11008DD86A /* SRConnectionExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +558,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9347456C1A7778AE00822A5D /* SRAutoTransportSpec.m in Sources */,
+				9322684B1A7FBD8F00BC57E2 /* SRHttpBasedTransportSpec.m in Sources */,
+				932268521A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m in Sources */,
 				936F0A0C1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m in Sources */,
+				932268461A7FB20700BC57E2 /* SignalRNetworkingSpec.m in Sources */,
+				9322684D1A7FBE8E00BC57E2 /* Utilities.m in Sources */,
+				932268501A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

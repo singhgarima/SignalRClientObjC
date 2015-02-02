@@ -34,5 +34,6 @@
 @interface SRAutoTransport : SRHttpBasedTransport <SRClientTransportInterface>
 
 - (instancetype)initWithTransports:(NSMutableArray *)transports;
+- (instancetype)initWithTransports:(NSMutableArray *)transports andNetworking:(id<SignalRNetworking>)networking;
 
 @end

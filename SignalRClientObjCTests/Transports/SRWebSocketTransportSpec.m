@@ -11,20 +11,6 @@
 
 SpecBegin(SRWebSocketTransport)
 
-describe(@"SRWebSocketTransport", ^{
-    sharedExamplesFor(@"another shared behavior", ^(NSDictionary *data) {
-        // Locally defined shared examples can override global shared examples within its scope.
-    });
-    
-    beforeAll(^{
-        // This is run once and only once before all of the examples
-        // in this group and before any beforeEach blocks.
-    });
-    
-    beforeEach(^{
-        // This is run before each example.
-    });
-    
     describe(@"send:data:(connectionData:completionHandler:", ^{
         it(@"should send data using websocket", ^{
             id mockWebSocket = OCMClassMock([SRWebSocket class]);
@@ -88,7 +74,5 @@ describe(@"SRWebSocketTransport", ^{
             
         });
     });
-
-});
 
 SpecEnd
