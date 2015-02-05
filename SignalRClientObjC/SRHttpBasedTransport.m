@@ -95,28 +95,17 @@ completionHandler:(void (^)(SRNegotiationResponse *response, NSError *error))blo
 
     [connection prepareRequest:urlRequest];
 
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-    [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (block) {
-            block([[SRNegotiationResponse alloc] initWithDictionary:responseObject], nil);
-        }
-    }                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (block) {
-            block(nil, error);
-        }
-    }];
-//    NSOperation *operation = [networking operationForUrlRequest:urlRequest
-//                    withSuccessHandler:^(NSDictionary *responseDict) {
-//                        if (block) {
-//                            block([[SRNegotiationResponse alloc] initWithDictionary:responseDict], nil);
-//                        }
-//                    }
-//                    withFailureHandler:^(NSError *error) {
-//                        if (block) {
-//                            block(nil, error);
-//                        }
-//                    }];
+    NSOperation *operation = [networking operationForUrlRequest:urlRequest
+                                             withSuccessHandler:^(NSDictionary *responseDict) {
+                                                 if (block) {
+                                                     block([[SRNegotiationResponse alloc] initWithDictionary:responseDict], nil);
+                                                 }
+                                             }
+                                             withFailureHandler:^(NSError *error) {
+                                                 if (block) {
+                                                     block(nil, error);
+                                                 }
+                                             }];
     [operation start];
 }
 
@@ -154,19 +143,20 @@ completionHandler:(void (^)(id response, NSError *error))block {
 
     [connection prepareRequest:urlRequest];
 
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-    [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [connection didReceiveData:responseObject];
-        if (block) {
-            block(responseObject, nil);
-        }
-    }                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [connection didReceiveError:error];
-        if (block) {
-            block(nil, error);
-        }
-    }];
+    NSOperation *operation = [networking operationForUrlRequest:urlRequest
+                                             withSuccessHandler:^(NSDictionary *responseDict) {
+                                                 [connection didReceiveData:responseDict];
+                                                 if (block) {
+                                                     block(responseDict, nil);
+                                                 }
+                                             }
+                                             withFailureHandler:^(NSError *error) {
+                                                 [connection didReceiveError:error];
+                                                 if (block) {
+                                                     block(nil, error);
+                                                 }
+                                             }];
+
     [operation start];
 }
 

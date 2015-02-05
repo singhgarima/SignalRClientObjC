@@ -14,6 +14,7 @@
 		9322684D1A7FBE8E00BC57E2 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322684C1A7FBE8E00BC57E2 /* Utilities.m */; };
 		932268501A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */; };
 		932268521A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */; };
+		932268541A83A59000BC57E2 /* SRHttpBasedTransportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268531A83A59000BC57E2 /* SRHttpBasedTransportTest.m */; };
 		934745691A7360CA00822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
 		9347456A1A7372D700822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
 		9347456C1A7778AE00822A5D /* SRAutoTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */; };
@@ -81,6 +82,7 @@
 		9322684E1A7FBF9500BC57E2 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRLongPollingTransportSpec.m; path = Transports/SRLongPollingTransportSpec.m; sourceTree = "<group>"; };
 		932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRServerSentEventsTransportSpec.m; path = Transports/SRServerSentEventsTransportSpec.m; sourceTree = "<group>"; };
+		932268531A83A59000BC57E2 /* SRHttpBasedTransportTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHttpBasedTransportTest.m; sourceTree = "<group>"; };
 		934745681A7360CA00822A5D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRAutoTransportSpec.m; path = Transports/SRAutoTransportSpec.m; sourceTree = "<group>"; };
 		936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRWebSocketTransportSpec.m; path = Transports/SRWebSocketTransportSpec.m; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				9322684A1A7FBD8F00BC57E2 /* SRHttpBasedTransportSpec.m */,
 				9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */,
 				932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */,
+				932268531A83A59000BC57E2 /* SRHttpBasedTransportTest.m */,
 			);
 			name = Transports;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				936F0A0C1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m in Sources */,
 				932268461A7FB20700BC57E2 /* SignalRNetworkingSpec.m in Sources */,
 				9322684D1A7FBE8E00BC57E2 /* Utilities.m in Sources */,
+				932268541A83A59000BC57E2 /* SRHttpBasedTransportTest.m in Sources */,
 				932268501A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
