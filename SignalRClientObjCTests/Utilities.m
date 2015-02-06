@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Utilities.h"
 
-
 @implementation TestNetworking
 - (NSOperation *)operationForUrlRequest:(NSMutableURLRequest *)urlRequest
                      withSuccessHandler:(void (^)(SRNegotiationResponse *response))successHandler
@@ -17,6 +16,20 @@
     return nil;
 }
 
+@end
+
+
+@implementation MockCalls
+
+- (void)successCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    success(nil, _successResponse);
+}
+
+- (void)failedCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    failure(nil, _error);
+}
 @end
 
 @implementation Utilities

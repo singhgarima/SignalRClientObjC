@@ -12,31 +12,7 @@
 #import "SRNegotiationResponse.h"
 #import "SRConnection.h"
 #import "SRHttpBasedTransport.h"
-
-@interface MockCalls : NSObject
-@property(strong, nonatomic) NSDictionary *successResponse;
-@property(strong, nonatomic) NSError *error;
-
-- (void)successCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-
-- (void)failedCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-@end
-
-@implementation MockCalls
-
-- (void)successCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    success(nil, _successResponse);
-}
-
-- (void)failedCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    failure(nil, _error);
-}
-@end
-
+#import "Utilities.h"
 
 @interface SRHttpBasedTransportTest : XCTestCase
 
@@ -46,11 +22,9 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
