@@ -206,6 +206,74 @@
     OCMVerify(mockNetworking);
 };
 
+#pragma mark - abort:timeout:connectionData:
+
+- (void)testAbortTimeoutConnectionDataSuccess {
+//    _startedAbort = YES;
+//
+//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+//    [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//    }                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        SRLogHTTPTransport(@"Clean disconnect failed. %@", error);
+//        [self completeAbort];
+//    }];
+//    [operation start];
+    NSString *baseUrl = @"http://base.url.com/";
+    NSString *abortUrl = [NSString stringWithFormat:@"%@%@?transport=", baseUrl, @"abort"];
+
+    id mockUrlRequest = OCMClassMock([NSMutableURLRequest class]);
+    OCMExpect([mockUrlRequest requestWithURL:[OCMArg checkWithBlock:^BOOL(NSURL *url) {
+        XCTAssertTrue([[url absoluteString] containsString:baseUrl]);
+        XCTAssertTrue([[url absoluteString] containsString:abortUrl]);
+        return YES;
+    }]]).andReturn(mockUrlRequest);
+    OCMExpect([mockUrlRequest setHTTPMethod:@"POST"]);
+    OCMExpect([mockUrlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"]);
+
+    id mockConnection = OCMClassMock([SRConnection class]);
+    OCMStub([mockConnection url]).andReturn(baseUrl);
+    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
+
+    AFHTTPRequestOperation *mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest
+                                                                     withSuccessResponse:nil];
+
+    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
+    [transport abort:mockConnection timeout:@1 connectionData:@"something"];
+
+    OCMVerifyAll(mockUrlRequest);
+    OCMVerifyAll(mockConnection);
+    OCMVerify(mockNetworking);
+}
+
+- (void)pendingAbortTimeoutConnectionDataFailure {
+    NSString *baseUrl = @"http://base.url.com/";
+    NSString *abortUrl = [NSString stringWithFormat:@"%@%@?transport=", baseUrl, @"abort"];
+
+    id mockUrlRequest = OCMClassMock([NSMutableURLRequest class]);
+    OCMExpect([mockUrlRequest requestWithURL:[OCMArg checkWithBlock:^BOOL(NSURL *url) {
+        XCTAssertTrue([[url absoluteString] containsString:baseUrl]);
+        XCTAssertTrue([[url absoluteString] containsString:abortUrl]);
+        return YES;
+    }]]).andReturn(mockUrlRequest);
+    OCMExpect([mockUrlRequest setHTTPMethod:@"POST"]);
+    OCMExpect([mockUrlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"]);
+
+    id mockConnection = OCMClassMock([SRConnection class]);
+    OCMStub([mockConnection url]).andReturn(baseUrl);
+    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
+
+    NSError *errorResponse = [[NSError alloc] init];
+    AFHTTPRequestOperation *mockNetworking = [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
+
+    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
+    [transport abort:mockConnection timeout:@1 connectionData:@"something"];
+
+    OCMVerifyAll(mockUrlRequest);
+    OCMVerifyAll(mockConnection);
+    OCMVerify(mockNetworking);
+}
+
 #pragma mark - Test helpers
 
 - (id)expectFailedResponseForUrlRequest:(id)mockUrlRequest withError:(NSError *)errorResponse {
