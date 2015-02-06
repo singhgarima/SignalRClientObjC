@@ -48,7 +48,7 @@
     OCMStub([mockConnection url]).andReturn(baseUrl);
     OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
 
-    AFHTTPRequestOperation *mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
+    id mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
 
     id mockResponse = OCMClassMock([SRNegotiationResponse class]);
     OCMExpect([mockResponse alloc]).andReturn(mockResponse);
@@ -61,7 +61,7 @@
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
-    OCMVerify(mockNetworking);
+    OCMVerifyAll(mockNetworking);
     OCMVerifyAll(mockResponse);
 }
 
@@ -130,14 +130,14 @@
     OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
     OCMExpect([mockConnection didReceiveData:successResponse]);
 
-    AFHTTPRequestOperation *mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
+    id mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
 
     SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
     [transport send:mockConnection data:@"blah" connectionData:@"something" completionHandler:block];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
-    OCMVerify(mockNetworking);
+    OCMVerifyAll(mockNetworking);
 };
 
 - (void)testSendDataConnectionDataCompletionHandlerWithFailedResponse {
@@ -170,14 +170,14 @@
     OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
     OCMExpect([mockConnection didReceiveError:errorResponse]);
 
-    AFHTTPRequestOperation *mockNetworking = [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
+    id mockNetworking = [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
 
     SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
     [transport send:mockConnection data:@"blah" connectionData:@"something" completionHandler:block];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
-    OCMVerify(mockNetworking);
+    OCMVerifyAll(mockNetworking);
 };
 
 #pragma mark - abort:timeout:connectionData:
