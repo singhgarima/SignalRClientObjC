@@ -197,13 +197,13 @@ connectionData:(NSString *)connectionData {
 
         [connection prepareRequest:urlRequest];
 
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-        [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
-        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        }                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            SRLogHTTPTransport(@"Clean disconnect failed. %@", error);
-            [self completeAbort];
-        }];
+        NSOperation *operation = [networking operationForUrlRequest:urlRequest
+                                                 withSuccessHandler:^(NSDictionary *responseDict) {}
+                                                 withFailureHandler:^(NSError *error) {
+                                                     SRLogHTTPTransport(@"Clean disconnect failed. %@", error);
+                                                     [self completeAbort];
+                                                 }];
+
         [operation start];
     }
 }

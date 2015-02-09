@@ -13,17 +13,6 @@
 
 @end
 
-@interface MockCalls : NSObject
-@property(strong, nonatomic) NSDictionary *successResponse;
-@property(strong, nonatomic) NSError *error;
-
-- (void)successCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-
-- (void)failedCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-@end
-
 @interface Utilities : NSObject
 
 @end

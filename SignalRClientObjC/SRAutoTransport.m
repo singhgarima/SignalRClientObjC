@@ -54,9 +54,12 @@
 }
 
 - (instancetype)initWithTransports:(NSMutableArray *)transports andNetworking:(id <SignalRNetworking>)aNetworking {
-    SRAutoTransport *autoTransport = [self initWithTransports:transports];
-    self.networking = aNetworking;
-    return autoTransport;
+    if (self = [super init]) {
+        _transports = transports;
+        _startIndex = 0;
+        self.networking = aNetworking;
+    }
+    return self;
 }
 
 

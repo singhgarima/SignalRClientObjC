@@ -12,7 +12,8 @@
 #import "SignalRAFNetworking.h"
 
 @interface SignalRAFNetworkingTest : XCTestCase
-
+@property id successResponse;
+@property id error;
 @end
 
 @implementation SignalRAFNetworkingTest
@@ -30,7 +31,7 @@
 #pragma mark - operationForUrlRequest:withSuccessHandler:withFailureHandler:
 
 - (void)testOperationForUrlRequestWithSuccessHandlerWithFailureHandlerOnSuccess {
-    NSDictionary *successResponse = @{@"success": @"response"};
+    NSDictionary *successResponse = @{@"success" : @"response"};
     void (^successHandler)(id) = ^(id response) {
         XCTAssertEqual(response, successResponse);
     };
@@ -68,28 +69,38 @@
 #pragma mark - Test helpers
 
 - (id)expectFailedResponseForUrlRequest:(id)mockUrlRequest withError:(NSError *)errorResponse {
-    MockCalls *mockCall = [[MockCalls alloc] init];
-    [mockCall setError:errorResponse];
+    self.error = errorResponse;
     AFHTTPRequestOperation *mockNetworking = OCMClassMock([AFHTTPRequestOperation class]);
     OCMStub([(id) mockNetworking alloc]).andReturn(mockNetworking);
     OCMStub([mockNetworking initWithRequest:mockUrlRequest]).andReturn(mockNetworking);
     OCMExpect([mockNetworking setResponseSerializer:[OCMArg any]]);
     OCMExpect([mockNetworking setCompletionBlockWithSuccess:[OCMArg any]
-                                                    failure:[OCMArg any]]).andCall(mockCall, @selector(failedCompletionHandlerWithSuccess:failure:));
+                                                    failure:[OCMArg any]]).
+            andCall(self, @selector(failedCompletionHandlerWithSuccess:failure:));
     return mockNetworking;
 }
 
 - (id)expectSuccessfulResponseForUrlRequest:(id)mockUrlRequest withSuccessResponse:(NSDictionary *)successResponse {
-    MockCalls *mockCall = [[MockCalls alloc] init];
-    [mockCall setSuccessResponse:successResponse];
+    self.successResponse = successResponse;
     AFHTTPRequestOperation *mockNetworking = OCMClassMock([AFHTTPRequestOperation class]);
     OCMStub([(id) mockNetworking alloc]).andReturn(mockNetworking);
     OCMStub([mockNetworking initWithRequest:mockUrlRequest]).andReturn(mockNetworking);
     OCMExpect([mockNetworking setResponseSerializer:[OCMArg any]]);
 
     OCMExpect([mockNetworking setCompletionBlockWithSuccess:[OCMArg any]
-                                                    failure:[OCMArg any]]).andCall(mockCall, @selector(successCompletionHandlerWithSuccess:failure:));
+                                                    failure:[OCMArg any]]).
+            andCall(self, @selector(successCompletionHandlerWithSuccess:failure:));
     return mockNetworking;
 };
+
+- (void)successCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    success(nil, self.successResponse);
+}
+
+- (void)failedCompletionHandlerWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    failure(nil, self.error);
+}
 
 @end

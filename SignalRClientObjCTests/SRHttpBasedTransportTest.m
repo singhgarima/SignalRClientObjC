@@ -7,24 +7,35 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <AFNetworking/AFHTTPRequestOperation.h>
 #import <OCMock/OCMock.h>
 #import "SRNegotiationResponse.h"
 #import "SRConnection.h"
 #import "SRHttpBasedTransport.h"
 #import "Utilities.h"
+#import "SignalRAFNetworking.h"
 
-@interface SRHttpBasedTransportTest : XCTestCase
+@interface SRHttpBasedTransportTest : XCTestCase {
+    id mockNetworking;
+    SRHttpBasedTransport *transport;
 
+}
+@property id successResponse;
+@property id error;
 @end
 
 @implementation SRHttpBasedTransportTest
 
 - (void)setUp {
     [super setUp];
+    mockNetworking = OCMClassMock([SignalRAFNetworking class]);
+    [[[[mockNetworking stub] classMethod] andReturn:mockNetworking] alloc];
+    [[[mockNetworking stub] andReturn:mockNetworking] init];
+
+    transport = [[SRHttpBasedTransport alloc] init];
 }
 
 - (void)tearDown {
+    [mockNetworking stopMocking];
     [super tearDown];
 }
 
@@ -37,27 +48,25 @@
     };
 
     id mockUrlRequest = OCMClassMock([NSMutableURLRequest class]);
-    OCMExpect([mockUrlRequest requestWithURL:[OCMArg checkWithBlock:^BOOL(NSURL *url) {
+    [[[mockUrlRequest expect] andReturn:mockUrlRequest] requestWithURL:[OCMArg checkWithBlock:^BOOL(NSURL *url) {
         XCTAssertTrue([[url absoluteString] containsString:baseUrl]);
         return YES;
-    }]]).andReturn(mockUrlRequest);
-    OCMExpect([mockUrlRequest setHTTPMethod:@"GET"]);
-    OCMExpect([mockUrlRequest setTimeoutInterval:30]);
+    }]];
+    [[mockUrlRequest expect] setHTTPMethod:@"GET"];
+    [[mockUrlRequest expect] setTimeoutInterval:30];
+
 
     id mockConnection = OCMClassMock([SRConnection class]);
-    OCMStub([mockConnection url]).andReturn(baseUrl);
-    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
+    [[[mockConnection stub] andReturn:baseUrl] url];
+    [[mockConnection expect] prepareRequest:mockUrlRequest];
 
-    id mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
+    [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
 
     id mockResponse = OCMClassMock([SRNegotiationResponse class]);
-    OCMExpect([mockResponse alloc]).andReturn(mockResponse);
-    OCMExpect([mockResponse initWithDictionary:successResponse]).andReturn(mockResponse);
+    [[[[mockResponse stub] classMethod] andReturn:mockResponse] alloc];
+    [[[mockResponse expect] andReturn:mockResponse] initWithDictionary:successResponse];
 
-    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
-
-    [transport negotiate:mockConnection
-          connectionData:@"something" completionHandler:block];
+    [transport negotiate:mockConnection connectionData:@"something" completionHandler:block];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
@@ -71,31 +80,30 @@
     NSError *errorResponse = [[NSError alloc] init];
     void (^block)(SRNegotiationResponse *, NSError *) = ^(SRNegotiationResponse *response, id error) {
         XCTAssertEqual(error, errorResponse);
-//        return YES;
     };
 
     id mockUrlRequest = OCMClassMock([NSMutableURLRequest class]);
-    OCMExpect([mockUrlRequest requestWithURL:[OCMArg checkWithBlock:^BOOL(NSURL *url) {
+    [[[mockUrlRequest expect] andReturn:mockUrlRequest] requestWithURL:[OCMArg checkWithBlock:^BOOL(NSURL *url) {
         XCTAssertTrue([[url absoluteString] containsString:baseUrl]);
         return YES;
-    }]]).andReturn(mockUrlRequest);
-    OCMExpect([mockUrlRequest setHTTPMethod:@"GET"]);
-    OCMExpect([mockUrlRequest setTimeoutInterval:30]);
+    }]];
+    [[mockUrlRequest expect] setHTTPMethod:@"GET"];
+    [[mockUrlRequest expect] setTimeoutInterval:30];
 
     id mockConnection = OCMClassMock([SRConnection class]);
-    OCMStub([mockConnection url]).andReturn(baseUrl);
-    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
+    [[[mockConnection stub] andReturn:baseUrl] url];
+    [[mockConnection expect] prepareRequest:mockUrlRequest];
 
-    id mockNetworking = [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
-
-    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
+    [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
 
     [transport negotiate:mockConnection
           connectionData:@"something" completionHandler:block];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
-    OCMVerifyAll(mockNetworking);
+    [mockNetworking verify];
+    [mockUrlRequest stopMocking];
+    [mockConnection stopMocking];
 };
 
 #pragma mark - send:data:connectionData:completionHandler:
@@ -122,22 +130,23 @@
     OCMExpect([mockUrlRequest setHTTPBody:[OCMArg checkWithBlock:^BOOL(NSData *requestData){
         NSString *resultString = [[NSString alloc] initWithData:requestData encoding:NSUTF8StringEncoding];
         XCTAssertTrue([resultString isEqualToString:@"data=blah"]);
-        return YES;       
+        return YES;
     }]]);
 
     id mockConnection = OCMClassMock([SRConnection class]);
-    OCMStub([mockConnection url]).andReturn(baseUrl);
-    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
-    OCMExpect([mockConnection didReceiveData:successResponse]);
+    [[[mockConnection stub] andReturn:baseUrl] url];
+    [[mockConnection expect] prepareRequest:mockUrlRequest];
+    [[mockConnection expect] didReceiveData:successResponse];
 
-    id mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
+    [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:successResponse];
 
-    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
     [transport send:mockConnection data:@"blah" connectionData:@"something" completionHandler:block];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
     OCMVerifyAll(mockNetworking);
+    [mockUrlRequest stopMocking];
+    [mockConnection stopMocking];
 };
 
 - (void)testSendDataConnectionDataCompletionHandlerWithFailedResponse {
@@ -166,33 +175,24 @@
     }]]);
 
     id mockConnection = OCMClassMock([SRConnection class]);
-    OCMStub([mockConnection url]).andReturn(baseUrl);
-    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
-    OCMExpect([mockConnection didReceiveError:errorResponse]);
+    [[[mockConnection stub] andReturn:baseUrl] url];
+    [[mockConnection expect] prepareRequest:mockUrlRequest];
+    [[mockConnection expect] didReceiveError:errorResponse];
 
-    id mockNetworking = [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
+    [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
 
-    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
     [transport send:mockConnection data:@"blah" connectionData:@"something" completionHandler:block];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
     OCMVerifyAll(mockNetworking);
+    [mockUrlRequest stopMocking];
+    [mockConnection stopMocking];
 };
 
 #pragma mark - abort:timeout:connectionData:
 
 - (void)testAbortTimeoutConnectionDataSuccess {
-//    _startedAbort = YES;
-//
-//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-//    [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
-//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//    }                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        SRLogHTTPTransport(@"Clean disconnect failed. %@", error);
-//        [self completeAbort];
-//    }];
-//    [operation start];
     NSString *baseUrl = @"http://base.url.com/";
     NSString *abortUrl = [NSString stringWithFormat:@"%@%@?transport=", baseUrl, @"abort"];
 
@@ -206,21 +206,21 @@
     OCMExpect([mockUrlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"]);
 
     id mockConnection = OCMClassMock([SRConnection class]);
-    OCMStub([mockConnection url]).andReturn(baseUrl);
-    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
+    [[[mockConnection stub] andReturn:baseUrl] url];
+    [[mockConnection expect] prepareRequest:mockUrlRequest];
 
-    AFHTTPRequestOperation *mockNetworking = [self expectSuccessfulResponseForUrlRequest:mockUrlRequest
-                                                                     withSuccessResponse:nil];
+    [self expectSuccessfulResponseForUrlRequest:mockUrlRequest withSuccessResponse:nil];
 
-    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
     [transport abort:mockConnection timeout:@1 connectionData:@"something"];
 
     OCMVerifyAll(mockUrlRequest);
     OCMVerifyAll(mockConnection);
-    OCMVerify(mockNetworking);
+    [mockNetworking verify];
+    [mockUrlRequest stopMocking];
+    [mockConnection stopMocking];
 }
 
-- (void)pendingAbortTimeoutConnectionDataFailure {
+- (void)testAbortTimeoutConnectionDataFailure {
     NSString *baseUrl = @"http://base.url.com/";
     NSString *abortUrl = [NSString stringWithFormat:@"%@%@?transport=", baseUrl, @"abort"];
 
@@ -234,13 +234,12 @@
     OCMExpect([mockUrlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"]);
 
     id mockConnection = OCMClassMock([SRConnection class]);
-    OCMStub([mockConnection url]).andReturn(baseUrl);
-    OCMExpect([mockConnection prepareRequest:mockUrlRequest]);
+    [[[mockConnection stub] andReturn:baseUrl] url];
+    [[mockConnection expect] prepareRequest:mockUrlRequest];
 
-    NSError *errorResponse = [[NSError alloc] init];
-    AFHTTPRequestOperation *mockNetworking = [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
+    NSError *errorResponse = [NSError errorWithDomain:@"blah" code:200 userInfo:nil];
+    [self expectFailedResponseForUrlRequest:mockUrlRequest withError:errorResponse];
 
-    SRHttpBasedTransport *transport = [[SRHttpBasedTransport alloc] init];
     [transport abort:mockConnection timeout:@1 connectionData:@"something"];
 
     OCMVerifyAll(mockUrlRequest);
@@ -250,30 +249,36 @@
 
 #pragma mark - Test helpers
 
-- (id)expectFailedResponseForUrlRequest:(id)mockUrlRequest withError:(NSError *)errorResponse {
-    MockCalls *mockCall = [[MockCalls alloc] init];
-    [mockCall setError:errorResponse];
-    AFHTTPRequestOperation *mockNetworking = OCMClassMock([AFHTTPRequestOperation class]);
-    OCMStub([(id) mockNetworking alloc]).andReturn(mockNetworking);
-    OCMStub([mockNetworking initWithRequest:mockUrlRequest]).andReturn(mockNetworking);
-    OCMExpect([mockNetworking setResponseSerializer:[OCMArg any]]);
-    OCMExpect([mockNetworking setCompletionBlockWithSuccess:[OCMArg any]
-                                                    failure:[OCMArg any]]).andCall(mockCall, @selector(failedCompletionHandlerWithSuccess:failure:));
-    OCMExpect([(AFHTTPRequestOperation *) mockNetworking start]);
-    return mockNetworking;
+- (void)expectFailedResponseForUrlRequest:(id)mockUrlRequest withError:(NSError *)errorResponse {
+    id mockOperation = OCMClassMock([NSOperation class]);
+    self.error = errorResponse;
+    OCMExpect([mockNetworking operationForUrlRequest:mockUrlRequest
+                                  withSuccessHandler:[OCMArg any]
+                                  withFailureHandler:[OCMArg any]]).
+            andCall(self, @selector(failedCompletionHandlerForUrlRequest:success:failure:)).
+            andReturn(mockOperation);
+    OCMStub([(NSOperation *) mockOperation start]);
 }
 
-- (id)expectSuccessfulResponseForUrlRequest:(id)mockUrlRequest withSuccessResponse:(NSDictionary *)successResponse {
-    MockCalls *mockCall = [[MockCalls alloc] init];
-    [mockCall setSuccessResponse:successResponse];
-    AFHTTPRequestOperation *mockNetworking = OCMClassMock([AFHTTPRequestOperation class]);
-    OCMStub([(id) mockNetworking alloc]).andReturn(mockNetworking);
-    OCMStub([mockNetworking initWithRequest:mockUrlRequest]).andReturn(mockNetworking);
-    OCMExpect([mockNetworking setResponseSerializer:[OCMArg any]]);
+- (void)expectSuccessfulResponseForUrlRequest:(id)mockUrlRequest withSuccessResponse:(NSDictionary *)successResponse {
+    id mockOperation = OCMClassMock([NSOperation class]);
+    self.successResponse = successResponse;
+    OCMExpect([mockNetworking operationForUrlRequest:mockUrlRequest
+                                  withSuccessHandler:[OCMArg any]
+                                  withFailureHandler:[OCMArg any]]).
+            andCall(self, @selector(successCompletionHandlerForUrlRequest:success:failure:)).
+            andReturn(mockOperation);
 
-    OCMExpect([mockNetworking setCompletionBlockWithSuccess:[OCMArg any]
-                                                    failure:[OCMArg any]]).andCall(mockCall, @selector(successCompletionHandlerWithSuccess:failure:));
-    OCMExpect([(AFHTTPRequestOperation *) mockNetworking start]);
-    return mockNetworking;
+    OCMStub([(NSOperation *) mockOperation start]);
 };
+
+- (void)successCompletionHandlerForUrlRequest:(NSURLRequest *)urlRequest success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure {
+    success(self.successResponse);
+}
+
+- (void)failedCompletionHandlerForUrlRequest:(NSURLRequest *)urlRequest
+                                     success:(void (^)(id responseObject))success
+                                     failure:(void (^)(NSError *error))failure {
+    failure(self.error);
+}
 @end
