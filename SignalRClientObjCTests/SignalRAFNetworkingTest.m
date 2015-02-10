@@ -30,27 +30,6 @@
 
 #pragma mark - operationForUrlRequest:withSuccessHandler:withFailureHandler:
 
-- (void)testOperationForUrlRequestWithSuccessHandlerWithFailureHandlerOnSuccess {
-
-
-
-//    NSDictionary *successResponse = @{@"success" : @"response"};
-//    void (^successHandler)(id) = ^(id response) {
-//        XCTAssertEqual(response, successResponse);
-//    };
-//    void (^failureHandler)(NSError *) = ^(NSError *error) {
-//        XCTAssertTrue(NO, @"should not be called");
-//    };
-//    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] init];
-//
-//    id mockAFNetworking = [self expectSuccessfulResponseForUrlRequest:urlRequest withSuccessResponse:successResponse];
-//
-//    SignalRAFNetworking *networking = [[SignalRAFNetworking alloc] init];
-//    [networking operationForUrlRequest:urlRequest withSuccessHandler:successHandler withFailureHandler:failureHandler];
-//
-//    OCMVerifyAll(mockAFNetworking);
-}
-
 - (void)testOperationForUrlRequestWithSuccessHandlerWithFailureHandlerOnFailure {
     NSError *errorResponse = [[NSError alloc] init];
     void (^successHandler)(id) = ^(id response) {

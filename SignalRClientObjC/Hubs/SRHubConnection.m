@@ -45,29 +45,7 @@
 #pragma mark Initialization
 
 - (instancetype)initWithURLString:(NSString *)URL {
-    return [self initWithURLString:URL useDefault:YES];
-}
-
-- (instancetype)initWithURLString:(NSString *)URL useDefault:(BOOL)useDefault {
-    if (self = [super initWithURLString:[[self class] getUrl:URL useDefault:useDefault]])  {
-		[self commonInit];
-    }
-    return self;
-}
-
-- (instancetype)initWithURLString:(NSString *)url queryString:(NSString *)queryString {
-    return [self initWithURLString:url queryString:queryString useDefault:YES];
-}
-
-- (instancetype)initWithURLString:(NSString *)url queryString:(NSString *)queryString useDefault:(BOOL)useDefault {
-    if (self = [super initWithURLString:[[self class] getUrl:url useDefault:useDefault] queryString:queryString]) {
-		[self commonInit];
-    }
-    return self;
-}
-
-- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString {
-    return [self initWithURLString:url query:queryString useDefault:YES];
+    return [self initWithURLString:URL query:@{} useDefault:YES];
 }
 
 - (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString useDefault:(BOOL)useDefault {

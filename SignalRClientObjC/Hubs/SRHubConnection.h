@@ -30,9 +30,6 @@
  * An `SRHubConnection` object provides an abstraction over `SRConnection` and provides support for publishing and subscribing to custom events
  */
 @interface SRHubConnection : SRConnection <SRHubConnectionInterface>
-
-- (instancetype)initWithURLString:(NSString *)URL useDefault:(BOOL)useDefault;
-- (instancetype)initWithURLString:(NSString *)url queryString:(NSString *)queryString useDefault:(BOOL)useDefault;
 - (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString useDefault:(BOOL)useDefault;
 
 /**

@@ -57,12 +57,8 @@ typedef void (^onConnectionSlow)();
 /// @name Initializing an SRConnection Object
 ///-------------------------------
 
-+ (instancetype)connectionWithURL:(NSString *)URL;
-+ (instancetype)connectionWithURL:(NSString *)url query:(NSDictionary *)queryString;
-+ (instancetype)connectionWithURL:(NSString *)url queryString:(NSString *)queryString;
 - (instancetype)initWithURLString:(NSString *)url;
-- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString;
-- (instancetype)initWithURLString:(NSString *)url queryString:(NSString *)queryString;
+- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)query;
 
 ///-------------------------------
 /// @name Connection Management

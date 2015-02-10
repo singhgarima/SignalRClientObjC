@@ -74,27 +74,12 @@ void (^prepareRequest)(id);
 #pragma mark - 
 #pragma mark Initialization
 
-+ (instancetype)connectionWithURL:(NSString *)url {
-    return [[[self class] alloc] initWithURLString:url];
-}
-
-+ (instancetype)connectionWithURL:(NSString *)url query:(NSDictionary *)queryString {
-    return [[[self class] alloc] initWithURLString:url query:queryString];
-}
-
-+ (instancetype)connectionWithURL:(NSString *)url queryString:(NSString *)queryString {
-    return [[[self class] alloc] initWithURLString:url queryString:queryString];
-}
-
 - (instancetype)initWithURLString:(NSString *)url {
-    return [self initWithURLString:url queryString:nil];
+    return [self initWithURLString:url query:nil];
 }
 
-- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString {
-    return [self initWithURLString:url queryString:[self createQueryString:queryString]];
-}
-
-- (instancetype)initWithURLString:(NSString *)url queryString:(NSString *)queryString {
+- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)query {
+    NSString *queryString = [self createQueryString:query];
     if (self = [super init]) {
         if (url == nil) {
             [NSException raise:NSInvalidArgumentException format:NSLocalizedString(@"Url should be non-null",@"")];
