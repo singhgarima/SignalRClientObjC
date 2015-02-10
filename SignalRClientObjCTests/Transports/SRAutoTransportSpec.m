@@ -14,7 +14,7 @@
 #import "SRAutoTransport.h"
 #import "SignalRAFNetworking.h"
 #import "SRLongPollingTransport.h"
-#import "Utilities.h"
+#import "TestNetworking.h"
 
 SpecBegin(SRAutoTransport)
 

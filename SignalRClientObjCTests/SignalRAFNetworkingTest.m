@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import "Utilities.h"
+#import "TestHelpers.h"
 #import "SignalRAFNetworking.h"
 
 @interface SignalRAFNetworkingTest : XCTestCase

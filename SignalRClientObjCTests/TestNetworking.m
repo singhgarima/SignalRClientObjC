@@ -1,24 +1,17 @@
 //
-//  Utilities.m
+//  TestNetworking.m
 //  SignalRClientObjC
 //
-//  Created by Garima Singh on 2/2/15.
+//  Created by Garima Singh on 10/2/15.
 //  Copyright (c) 2015 SignalR. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Utilities.h"
+#import "TestNetworking.h"
 
 @implementation TestNetworking
 - (NSOperation *)operationForUrlRequest:(NSMutableURLRequest *)urlRequest
-                     withSuccessHandler:(void (^)(SRNegotiationResponse *response))successHandler
+                     withSuccessHandler:(void (^)(id response))successHandler
                      withFailureHandler:(void (^)(NSError *error))failureHandler {
     return nil;
 }
-
-@end
-
-@implementation Utilities
-
-
 @end

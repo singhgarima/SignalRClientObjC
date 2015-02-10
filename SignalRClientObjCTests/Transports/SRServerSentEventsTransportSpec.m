@@ -12,7 +12,7 @@
 
 #import "Expecta.h"
 #import "SignalRAFNetworking.h"
-#import "Utilities.h"
+#import "TestNetworking.h"
 #import "SRServerSentEventsTransport.h"
 
 SpecBegin(SRServerSentEventsTransport )
