@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		932268571A88F94400BC57E2 /* UniversalLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9322685A1A88F94400BC57E2 /* Build configuration list for PBXAggregateTarget "UniversalLib" */;
+			buildPhases = (
+				9322685B1A88F97200BC57E2 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalLib;
+			productName = UniversalLib;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		384DFB71151023C9A3969FB2 /* libPods-SignalRClientObjCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BCD9213884E93EC1567D75 /* libPods-SignalRClientObjCTests.a */; };
 		932268461A7FB20700BC57E2 /* SignalRNetworkingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268451A7FB20700BC57E2 /* SignalRNetworkingSpec.m */; };
@@ -16,6 +30,46 @@
 		932268521A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */; };
 		932268541A83A59000BC57E2 /* SRHttpBasedTransportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268531A83A59000BC57E2 /* SRHttpBasedTransportTest.m */; };
 		932268561A8513EC00BC57E2 /* SignalRAFNetworkingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 932268551A8513EC00BC57E2 /* SignalRAFNetworkingTest.m */; };
+		9322685D1A88FC5300BC57E2 /* NSObject+SRJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E8B1A70ECA4008DD86A /* NSObject+SRJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322685E1A88FC5300BC57E2 /* SRDeserializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E8D1A70ECA4008DD86A /* SRDeserializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322685F1A88FC5300BC57E2 /* SRExceptionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E8E1A70ECA4008DD86A /* SRExceptionHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268601A88FC5300BC57E2 /* SRSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E901A70ECA4008DD86A /* SRSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268611A88FC5300BC57E2 /* SRVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E911A70ECA4008DD86A /* SRVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268621A88FC5300BC57E2 /* SRWebSocketConnectionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E731A70EC18008DD86A /* SRWebSocketConnectionInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268631A88FC5300BC57E2 /* SRChunkBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E761A70EC22008DD86A /* SRChunkBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268641A88FC5300BC57E2 /* SREventSourceStreamReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E781A70EC22008DD86A /* SREventSourceStreamReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268651A88FC5300BC57E2 /* SRServerSentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E7A1A70EC22008DD86A /* SRServerSentEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268661A88FC5300BC57E2 /* SRClientTransportInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E601A70EBBE008DD86A /* SRClientTransportInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268671A88FC5300BC57E2 /* SRHttpBasedTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E611A70EBBE008DD86A /* SRHttpBasedTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268681A88FC5300BC57E2 /* SRAutoTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E631A70EBBE008DD86A /* SRAutoTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268691A88FC5300BC57E2 /* SRLongPollingTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E651A70EBBE008DD86A /* SRLongPollingTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322686A1A88FC5300BC57E2 /* SRServerSentEventsTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E671A70EBBE008DD86A /* SRServerSentEventsTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322686B1A88FC5300BC57E2 /* SRWebSocketTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E691A70EBBE008DD86A /* SRWebSocketTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322686C1A88FC5300BC57E2 /* SRHubs.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E391A70EB41008DD86A /* SRHubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322686D1A88FC5300BC57E2 /* SRHubConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E3A1A70EB41008DD86A /* SRHubConnectionInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322686E1A88FC5300BC57E2 /* SRHubConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E3B1A70EB41008DD86A /* SRHubConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322686F1A88FC5300BC57E2 /* SRHubProxyInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E3D1A70EB41008DD86A /* SRHubProxyInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268701A88FC5300BC57E2 /* SRHubProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E3E1A70EB41008DD86A /* SRHubProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268711A88FC5300BC57E2 /* SRHubProxyExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E401A70EB41008DD86A /* SRHubProxyExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268721A88FC5300BC57E2 /* SRHubInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E421A70EB41008DD86A /* SRHubInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268731A88FC5300BC57E2 /* SRHubRegistrationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E441A70EB41008DD86A /* SRHubRegistrationData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268741A88FC5300BC57E2 /* SRHubResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E461A70EB41008DD86A /* SRHubResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268751A88FC5300BC57E2 /* SRHubservable.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E481A70EB41008DD86A /* SRHubservable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268761A88FC5300BC57E2 /* SRSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E4A1A70EB41008DD86A /* SRSubscription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268771A88FC5300BC57E2 /* SignalR.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E211A70EB11008DD86A /* SignalR.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268781A88FC5300BC57E2 /* SRConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E221A70EB11008DD86A /* SRConnectionInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268791A88FC5400BC57E2 /* SRConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E231A70EB11008DD86A /* SRConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322687A1A88FC5400BC57E2 /* SRConnectionExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E251A70EB11008DD86A /* SRConnectionExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322687B1A88FC5400BC57E2 /* SRConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E271A70EB11008DD86A /* SRConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322687C1A88FC5400BC57E2 /* SRConnectionState.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E281A70EB11008DD86A /* SRConnectionState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322687D1A88FC5400BC57E2 /* SRHeartbeatMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E291A70EB11008DD86A /* SRHeartbeatMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322687E1A88FC5400BC57E2 /* SRKeepAliveData.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E2B1A70EB11008DD86A /* SRKeepAliveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9322687F1A88FC5400BC57E2 /* SRNegotiationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E2D1A70EB11008DD86A /* SRNegotiationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268801A88FC5400BC57E2 /* SRLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E18E2F1A70EB11008DD86A /* SRLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268811A88FC5400BC57E2 /* SignalRNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 932268441A7FACB600BC57E2 /* SignalRNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268821A88FC5400BC57E2 /* SignalRAFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 932268491A7FB27E00BC57E2 /* SignalRAFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268831A88FC5400BC57E2 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 9322684E1A7FBF9500BC57E2 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932268851A88FCC900BC57E2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932268841A88FCC900BC57E2 /* libPods.a */; };
 		934745691A7360CA00822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
 		9347456A1A7372D700822A5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 934745681A7360CA00822A5D /* libicucore.dylib */; };
 		9347456C1A7778AE00822A5D /* SRAutoTransportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */; };
@@ -46,7 +100,6 @@
 		93E18E931A70ECA4008DD86A /* NSObject+SRJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E8C1A70ECA4008DD86A /* NSObject+SRJSON.m */; };
 		93E18E941A70ECA4008DD86A /* SRExceptionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E8F1A70ECA4008DD86A /* SRExceptionHelper.m */; };
 		93E18E951A70ECA4008DD86A /* SRVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E18E921A70ECA4008DD86A /* SRVersion.m */; };
-		ED367067000A0014874FB067 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA794364A0D7E2476ED4134B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +138,7 @@
 		932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRServerSentEventsTransportSpec.m; path = Transports/SRServerSentEventsTransportSpec.m; sourceTree = "<group>"; };
 		932268531A83A59000BC57E2 /* SRHttpBasedTransportTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHttpBasedTransportTest.m; sourceTree = "<group>"; };
 		932268551A8513EC00BC57E2 /* SignalRAFNetworkingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalRAFNetworkingTest.m; sourceTree = "<group>"; };
+		932268841A88FCC900BC57E2 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		934745681A7360CA00822A5D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		9347456B1A7778AE00822A5D /* SRAutoTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRAutoTransportSpec.m; path = Transports/SRAutoTransportSpec.m; sourceTree = "<group>"; };
 		936F0A0B1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRWebSocketTransportSpec.m; path = Transports/SRWebSocketTransportSpec.m; sourceTree = "<group>"; };
@@ -163,8 +217,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932268851A88FCC900BC57E2 /* libPods.a in Frameworks */,
 				934745691A7360CA00822A5D /* libicucore.dylib in Frameworks */,
-				ED367067000A0014874FB067 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +422,7 @@
 		E382763F42479C4B4AD8867B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				932268841A88FCC900BC57E2 /* libPods.a */,
 				934745681A7360CA00822A5D /* libicucore.dylib */,
 				BA794364A0D7E2476ED4134B /* libPods.a */,
 				F2BCD9213884E93EC1567D75 /* libPods-SignalRClientObjCTests.a */,
@@ -376,6 +431,55 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9322685C1A88FC3700BC57E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9322685D1A88FC5300BC57E2 /* NSObject+SRJSON.h in Headers */,
+				9322685E1A88FC5300BC57E2 /* SRDeserializable.h in Headers */,
+				9322685F1A88FC5300BC57E2 /* SRExceptionHelper.h in Headers */,
+				932268601A88FC5300BC57E2 /* SRSerializable.h in Headers */,
+				932268611A88FC5300BC57E2 /* SRVersion.h in Headers */,
+				932268621A88FC5300BC57E2 /* SRWebSocketConnectionInfo.h in Headers */,
+				932268631A88FC5300BC57E2 /* SRChunkBuffer.h in Headers */,
+				932268641A88FC5300BC57E2 /* SREventSourceStreamReader.h in Headers */,
+				932268651A88FC5300BC57E2 /* SRServerSentEvent.h in Headers */,
+				932268661A88FC5300BC57E2 /* SRClientTransportInterface.h in Headers */,
+				932268671A88FC5300BC57E2 /* SRHttpBasedTransport.h in Headers */,
+				932268681A88FC5300BC57E2 /* SRAutoTransport.h in Headers */,
+				932268691A88FC5300BC57E2 /* SRLongPollingTransport.h in Headers */,
+				9322686A1A88FC5300BC57E2 /* SRServerSentEventsTransport.h in Headers */,
+				9322686B1A88FC5300BC57E2 /* SRWebSocketTransport.h in Headers */,
+				9322686C1A88FC5300BC57E2 /* SRHubs.h in Headers */,
+				9322686D1A88FC5300BC57E2 /* SRHubConnectionInterface.h in Headers */,
+				9322686E1A88FC5300BC57E2 /* SRHubConnection.h in Headers */,
+				9322686F1A88FC5300BC57E2 /* SRHubProxyInterface.h in Headers */,
+				932268701A88FC5300BC57E2 /* SRHubProxy.h in Headers */,
+				932268711A88FC5300BC57E2 /* SRHubProxyExtensions.h in Headers */,
+				932268721A88FC5300BC57E2 /* SRHubInvocation.h in Headers */,
+				932268731A88FC5300BC57E2 /* SRHubRegistrationData.h in Headers */,
+				932268741A88FC5300BC57E2 /* SRHubResult.h in Headers */,
+				932268751A88FC5300BC57E2 /* SRHubservable.h in Headers */,
+				932268761A88FC5300BC57E2 /* SRSubscription.h in Headers */,
+				932268771A88FC5300BC57E2 /* SignalR.h in Headers */,
+				932268781A88FC5300BC57E2 /* SRConnectionInterface.h in Headers */,
+				932268791A88FC5400BC57E2 /* SRConnection.h in Headers */,
+				9322687A1A88FC5400BC57E2 /* SRConnectionExtensions.h in Headers */,
+				9322687B1A88FC5400BC57E2 /* SRConnectionDelegate.h in Headers */,
+				9322687C1A88FC5400BC57E2 /* SRConnectionState.h in Headers */,
+				9322687D1A88FC5400BC57E2 /* SRHeartbeatMonitor.h in Headers */,
+				9322687E1A88FC5400BC57E2 /* SRKeepAliveData.h in Headers */,
+				9322687F1A88FC5400BC57E2 /* SRNegotiationResponse.h in Headers */,
+				932268801A88FC5400BC57E2 /* SRLog.h in Headers */,
+				932268811A88FC5400BC57E2 /* SignalRNetworking.h in Headers */,
+				932268821A88FC5400BC57E2 /* SignalRAFNetworking.h in Headers */,
+				932268831A88FC5400BC57E2 /* Utilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		93E18E061A70EAE0008DD86A /* SignalRClientObjC */ = {
@@ -387,6 +491,7 @@
 				93E18E041A70EAE0008DD86A /* Frameworks */,
 				93E18E051A70EAE0008DD86A /* CopyFiles */,
 				37C357249BC642D3BD4750CF /* Copy Pods Resources */,
+				9322685C1A88FC3700BC57E2 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -426,6 +531,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = SignalR;
 				TargetAttributes = {
+					932268571A88F94400BC57E2 = {
+						CreatedOnToolsVersion = 6.1;
+					};
 					93E18E061A70EAE0008DD86A = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -448,6 +556,7 @@
 			targets = (
 				93E18E061A70EAE0008DD86A /* SignalRClientObjC */,
 				93E18E111A70EAE0008DD86A /* SignalRClientObjCTests */,
+				932268571A88F94400BC57E2 /* UniversalLib */,
 			);
 		};
 /* End PBXProject section */
@@ -507,6 +616,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		9322685B1A88F97200BC57E2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ${PROJECT_NAME} -configuration ${CONFIGURATION} -sdk iphonesimulator -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\n# Last touch. copy the header files. Just for convenience\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"";
 		};
 		EB5983AA6C07F66B67D92BF4 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -586,6 +708,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		932268581A88F94400BC57E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		932268591A88F94400BC57E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		93E18E191A70EAE0008DD86A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -664,11 +800,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29209B79725ED7ACBE4B91A4 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -677,11 +818,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BABBF4761719FF2D855053F0 /* Pods.release.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -737,6 +883,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9322685A1A88F94400BC57E2 /* Build configuration list for PBXAggregateTarget "UniversalLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				932268581A88F94400BC57E2 /* Debug */,
+				932268591A88F94400BC57E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		93E18E021A70EAE0008DD86A /* Build configuration list for PBXProject "SignalRClientObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
