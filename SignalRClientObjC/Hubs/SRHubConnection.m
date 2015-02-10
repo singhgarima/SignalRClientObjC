@@ -28,6 +28,8 @@
 #import "SRHubResult.h"
 
 #import "NSObject+SRJSON.h"
+#import "SignalRNetworking.h"
+#import "SignalRAFNetworking.h"
 
 @interface SRHubConnection ()
 
@@ -49,7 +51,13 @@
 }
 
 - (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString useDefault:(BOOL)useDefault {
-    if (self = [super initWithURLString:[[self class] getUrl:url useDefault:useDefault] query:queryString]) {
+    SignalRAFNetworking *defaultNetworking = [[SignalRAFNetworking alloc] init];
+    return [self initWithURLString:url query:queryString useDefault:useDefault andNetworking:defaultNetworking];
+}
+
+- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)queryString useDefault:(BOOL)useDefault andNetworking:(id<SignalRNetworking>)networking {
+    NSString *baseUrl = [[self class] getUrl:url useDefault:useDefault];
+    if (self = [super initWithURLString:baseUrl query:queryString andNetworking:networking]) {
         [self commonInit];
     }
     return self;

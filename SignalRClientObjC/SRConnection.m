@@ -30,6 +30,7 @@
 #import "SRHeartbeatMonitor.h"
 
 #import "NSObject+SRJSON.h"
+#import "SignalRAFNetworking.h"
 
 void (^prepareRequest)(id);
 
@@ -70,6 +71,7 @@ void (^prepareRequest)(id);
 @synthesize transport = _transport;
 @synthesize credentials = _credentials;
 @synthesize headers = _headers;
+@synthesize networking = _networking;
 
 #pragma mark - 
 #pragma mark Initialization
@@ -79,20 +81,25 @@ void (^prepareRequest)(id);
 }
 
 - (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)query {
+    SignalRAFNetworking *defaultNetworking = [[SignalRAFNetworking alloc] init];
+    return [self initWithURLString:url query:query andNetworking:defaultNetworking];
+}
+
+- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)query andNetworking:(id<SignalRNetworking>)networking{
     NSString *queryString = [self createQueryString:query];
     if (self = [super init]) {
         if (url == nil) {
             [NSException raise:NSInvalidArgumentException format:NSLocalizedString(@"Url should be non-null",@"")];
         }
-        
+
         if(queryString && [queryString rangeOfString:@"?" options:NSCaseInsensitiveSearch].location != NSNotFound) {
             [NSException raise:NSInvalidArgumentException format:NSLocalizedString(@"Url cannot contain query string directly. Pass query string values in using available overload.",@"")];
         }
-        
+
         if([url hasSuffix:@"/"] == NO) {
             url = [url stringByAppendingString:@"/"];
         }
-        
+
         _url = url;
         _queryString = queryString;
         //_disconnectTimeoutOperation = DisposableAction.Empty;
@@ -103,11 +110,12 @@ void (^prepareRequest)(id);
         _defaultAbortTimeout = @30;
         _transportConnectTimeout = @0;
         _protocol = [[SRVersion alloc] initWithMajor:1 minor:3];
+        _networking = networking;
     }
     return self;
 }
 
-#pragma mark - 
+#pragma mark -
 #pragma mark Connection management
 
 - (void)start {

@@ -59,6 +59,7 @@ typedef void (^onConnectionSlow)();
 
 - (instancetype)initWithURLString:(NSString *)url;
 - (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)query;
+- (instancetype)initWithURLString:(NSString *)url query:(NSDictionary *)query andNetworking:(id <SignalRNetworking>)networking;
 
 ///-------------------------------
 /// @name Connection Management

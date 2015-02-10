@@ -26,6 +26,7 @@
 @protocol SRClientTransportInterface;
 @class SRKeepAliveData;
 @class SRVersion;
+@protocol SignalRNetworking;
 
 @protocol SRConnectionInterface <NSObject>
 
@@ -47,6 +48,7 @@
 @property (strong, nonatomic, readonly) id<SRClientTransportInterface> transport;
 @property (strong, nonatomic, readwrite) NSURLCredential *credentials;
 @property (strong, nonatomic, readwrite) NSMutableDictionary *headers;
+@property (strong, nonatomic, readwrite) id<SignalRNetworking> networking;
 
 ///-------------------------------
 /// @name Connection Management

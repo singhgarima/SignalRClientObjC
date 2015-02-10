@@ -12,6 +12,8 @@
 #import <Specta/Specta.h>
 #import "SRHubConnection.h"
 #import "SRVersion.h"
+#import "SignalRAFNetworking.h"
+#import "TestNetworking.h"
 
 SpecBegin(SRHubConnection)
     describe(@"initWithURLString", ^{
@@ -42,6 +44,28 @@ SpecBegin(SRHubConnection)
             expect(connection.queryString).to.equal(@"abc=def");
             expect(connection.items).to.beKindOf([NSMutableDictionary class]);
             expect(connection.headers).to.beKindOf([NSMutableDictionary class]);
+            expect(connection.networking).to.beKindOf([SignalRAFNetworking class]);
+            expect(connection.state).to.equal(disconnected);
+            expect(connection.transportConnectTimeout).to.equal(@0);
+            expect([connection.protocol isEqual:[[SRVersion alloc] initWithMajor:1 minor:3]]).to.beTruthy();
+
+            expect([connection valueForKey:@"hubs"]).to.beKindOf([NSMutableDictionary class]);
+            expect([connection valueForKey:@"callbacks"]).to.beKindOf([NSMutableDictionary class]);
+        });
+    });
+
+    describe(@"initWithURLString:query:useDefault:andNetworking", ^{
+        it(@"should initiatize hub connection", ^{
+            NSString *baseUrl = @"http://baseurl.yo/";
+            NSDictionary *queryString = @{@"abc": @"def"};
+            TestNetworking *testNetworking = [[TestNetworking alloc] init];
+            SRHubConnection *connection = [[SRHubConnection alloc] initWithURLString:baseUrl query:queryString useDefault:NO andNetworking:testNetworking];
+
+            expect(connection.url).to.equal(baseUrl);
+            expect(connection.queryString).to.equal(@"abc=def");
+            expect(connection.items).to.beKindOf([NSMutableDictionary class]);
+            expect(connection.headers).to.beKindOf([NSMutableDictionary class]);
+            expect(connection.networking).to.beKindOf([TestNetworking class]);
             expect(connection.state).to.equal(disconnected);
             expect(connection.transportConnectTimeout).to.equal(@0);
             expect([connection.protocol isEqual:[[SRVersion alloc] initWithMajor:1 minor:3]]).to.beTruthy();
