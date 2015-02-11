@@ -7,6 +7,8 @@
 //
 
 #import "SignalRAFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
+#import "SRNegotiationResponse.h"
 
 @implementation SignalRAFNetworking : NSObject
 

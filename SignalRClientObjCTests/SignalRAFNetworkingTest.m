@@ -10,6 +10,7 @@
 #import <OCMock/OCMock.h>
 #import "TestHelpers.h"
 #import "SignalRAFNetworking.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface SignalRAFNetworkingTest : XCTestCase
 @property id successResponse;
