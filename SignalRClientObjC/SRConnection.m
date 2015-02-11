@@ -120,7 +120,7 @@ void (^prepareRequest)(id);
 
 - (void)start {
     // Pick the best transport supported by the client
-    [self start:[[SRAutoTransport alloc] init]];
+    [self start:[[SRAutoTransport alloc] initWithNetworking:_networking]];
 }
 
 - (void)start:(id <SRClientTransportInterface>)transport {

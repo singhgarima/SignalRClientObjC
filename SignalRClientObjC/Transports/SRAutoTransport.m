@@ -35,7 +35,6 @@
 @end
 
 @implementation SRAutoTransport
-@synthesize networking;
 
 - (instancetype)init {
     NSArray *transports = @[//[[SRWebSocketTransport alloc] init],

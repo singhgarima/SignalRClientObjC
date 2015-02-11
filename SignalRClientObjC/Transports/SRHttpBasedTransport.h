@@ -24,6 +24,7 @@
 #import "SRClientTransportInterface.h"
 
 @interface SRHttpBasedTransport : NSObject <SRClientTransportInterface>
+@property(strong, nonatomic, readwrite) id <SignalRNetworking> networking;
 
 - (instancetype)initWithNetworking:(id <SignalRNetworking>)networking;
 

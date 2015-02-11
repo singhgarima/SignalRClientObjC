@@ -101,6 +101,7 @@
 		937775A71A8A1842000312A5 /* TestNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 937775A61A8A1842000312A5 /* TestNetworking.m */; };
 		937775A91A8A2CE6000312A5 /* SRConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 937775A81A8A2CE6000312A5 /* SRConnectionSpec.m */; };
 		937775AB1A8A35AC000312A5 /* SRHubConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 937775AA1A8A35AC000312A5 /* SRHubConnectionSpec.m */; };
+		937775B01A8B8E64000312A5 /* SRConnectionTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 937775AF1A8B8E64000312A5 /* SRConnectionTestHelper.m */; };
 		93E18E131A70EAE0008DD86A /* libSignalRClientObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */; };
 /* End PBXBuildFile section */
 
@@ -130,8 +131,8 @@
 		280452D851E055063089A1B8 /* Pods-SignalRClientObjCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignalRClientObjCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignalRClientObjCTests/Pods-SignalRClientObjCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		29209B79725ED7ACBE4B91A4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		932268451A7FB20700BC57E2 /* SignalRNetworkingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalRNetworkingSpec.m; sourceTree = "<group>"; };
-		9322684C1A7FBE8E00BC57E2 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
-		9322684E1A7FBF9500BC57E2 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
+		9322684C1A7FBE8E00BC57E2 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestHelpers.m; path = SignalRClientObjCTests/TestHelpers/TestHelpers.m; sourceTree = SOURCE_ROOT; };
+		9322684E1A7FBF9500BC57E2 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestHelpers.h; path = SignalRClientObjCTests/TestHelpers/TestHelpers.h; sourceTree = SOURCE_ROOT; };
 		9322684F1A7FC34E00BC57E2 /* SRLongPollingTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRLongPollingTransportSpec.m; path = Transports/SRLongPollingTransportSpec.m; sourceTree = "<group>"; };
 		932268511A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRServerSentEventsTransportSpec.m; path = Transports/SRServerSentEventsTransportSpec.m; sourceTree = "<group>"; };
 		932268531A83A59000BC57E2 /* SRHttpBasedTransportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRHttpBasedTransportSpec.m; path = Transports/SRHttpBasedTransportSpec.m; sourceTree = "<group>"; };
@@ -208,6 +209,8 @@
 		937775A61A8A1842000312A5 /* TestNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNetworking.m; sourceTree = "<group>"; };
 		937775A81A8A2CE6000312A5 /* SRConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConnectionSpec.m; sourceTree = "<group>"; };
 		937775AA1A8A35AC000312A5 /* SRHubConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRHubConnectionSpec.m; path = Hubs/SRHubConnectionSpec.m; sourceTree = "<group>"; };
+		937775AE1A8B8E64000312A5 /* SRConnectionTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConnectionTestHelper.h; sourceTree = "<group>"; };
+		937775AF1A8B8E64000312A5 /* SRConnectionTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConnectionTestHelper.m; sourceTree = "<group>"; };
 		93E18E071A70EAE0008DD86A /* libSignalRClientObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSignalRClientObjC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E18E121A70EAE0008DD86A /* SignalRClientObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRClientObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E18E181A70EAE0008DD86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -365,6 +368,17 @@
 			name = Hubs;
 			sourceTree = "<group>";
 		};
+		937775AD1A8B8DFB000312A5 /* TestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				9322684C1A7FBE8E00BC57E2 /* TestHelpers.m */,
+				9322684E1A7FBF9500BC57E2 /* TestHelpers.h */,
+				937775AE1A8B8E64000312A5 /* SRConnectionTestHelper.h */,
+				937775AF1A8B8E64000312A5 /* SRConnectionTestHelper.m */,
+			);
+			path = TestHelpers;
+			sourceTree = "<group>";
+		};
 		93E18DFE1A70EAE0008DD86A = {
 			isa = PBXGroup;
 			children = (
@@ -413,12 +427,11 @@
 		93E18E161A70EAE0008DD86A /* SignalRClientObjCTests */ = {
 			isa = PBXGroup;
 			children = (
+				937775AD1A8B8DFB000312A5 /* TestHelpers */,
 				937775AC1A8A35B4000312A5 /* Hubs */,
 				936F0A0A1A70F08200FD20B7 /* Transports */,
 				93E18E171A70EAE0008DD86A /* Supporting Files */,
 				932268451A7FB20700BC57E2 /* SignalRNetworkingSpec.m */,
-				9322684C1A7FBE8E00BC57E2 /* TestHelpers.m */,
-				9322684E1A7FBF9500BC57E2 /* TestHelpers.h */,
 				932268551A8513EC00BC57E2 /* SignalRAFNetworkingTest.m */,
 				937775A51A8A1842000312A5 /* TestNetworking.h */,
 				937775A61A8A1842000312A5 /* TestNetworking.m */,
@@ -705,6 +718,7 @@
 				932268521A7FC43C00BC57E2 /* SRServerSentEventsTransportSpec.m in Sources */,
 				936F0A0C1A70F0A000FD20B7 /* SRWebSocketTransportSpec.m in Sources */,
 				932268461A7FB20700BC57E2 /* SignalRNetworkingSpec.m in Sources */,
+				937775B01A8B8E64000312A5 /* SRConnectionTestHelper.m in Sources */,
 				932268561A8513EC00BC57E2 /* SignalRAFNetworkingTest.m in Sources */,
 				9322684D1A7FBE8E00BC57E2 /* TestHelpers.m in Sources */,
 				932268541A83A59000BC57E2 /* SRHttpBasedTransportSpec.m in Sources */,
