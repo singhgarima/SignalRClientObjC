@@ -1,3 +1,4 @@
 language: objective-c
-xcode_project: SignalRClientObjC.xcodeproj
-xcode_scheme: SignalRClientObjCTests
+script:
+  - xctool -workspace SignalRClientObjC.xcworkspace -scheme SignalRClientObjC -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool test -workspace SignalRClientObjC.xcworkspace -scheme SignalRClientObjCTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
