@@ -19,11 +19,10 @@
 SpecBegin(SRAutoTransport)
 
         describe(@"init:", ^{
-            //TODO: fix it
-            pending(@"should initiate transport and default networking", ^{
+            it(@"should initiate transport and default networking", ^{
                 id longPollingTransport = OCMClassMock([SRLongPollingTransport class]);
-                OCMStub([longPollingTransport alloc]).andReturn(longPollingTransport);
-                OCMStub([longPollingTransport init]).andReturn(longPollingTransport);
+                [[[longPollingTransport stub] andReturn:longPollingTransport] alloc];
+                [[[longPollingTransport stub] andReturn:longPollingTransport] init];
 
                 SRAutoTransport *transport = [[SRAutoTransport alloc] init];
 
@@ -34,9 +33,26 @@ SpecBegin(SRAutoTransport)
             });
         });
 
+        describe(@"initWithNetworking:", ^{
+            it(@"should initiate transport and specified networking", ^{
+                id longPollingTransport = OCMClassMock([SRLongPollingTransport class]);
+                [[[longPollingTransport stub] andReturn:longPollingTransport] alloc];
+                [[[longPollingTransport stub] andReturn:longPollingTransport] init];
+                TestNetworking *testNetworking = [[TestNetworking alloc] init];
+
+                SRAutoTransport *transport = [[SRAutoTransport alloc] initWithNetworking:testNetworking];
+
+                expect([transport valueForKey:@"transports"][0]).to.equal(longPollingTransport);
+                expect([transport valueForKey:@"startIndex"]).to.equal(0);
+                expect([transport networking]).to.beKindOf([TestNetworking class]);
+                OCMVerifyAll(longPollingTransport);
+            });
+        });
+
         describe(@"initWithTransports:", ^{
             it(@"should initiate transport and default networking", ^{
                 NSMutableArray *transports = [@[@"transport1"] mutableCopy];
+
                 SRAutoTransport *transport = [[SRAutoTransport alloc] initWithTransports:transports];
 
                 expect([transport valueForKey:@"transports"]).to.equal(transports);

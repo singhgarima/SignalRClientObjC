@@ -37,10 +37,11 @@
 @implementation SRAutoTransport
 
 - (instancetype)init {
-    NSArray *transports = @[//[[SRWebSocketTransport alloc] init],
-            //[[SRServerSentEventsTransport alloc] init],
-            [[SRLongPollingTransport alloc] init]];
-    return [self initWithTransports:[NSMutableArray arrayWithArray:transports]];
+    return [self initWithTransports:[NSMutableArray arrayWithArray:[self getDefaultTransports]]];
+}
+
+- (instancetype)initWithNetworking:(id <SignalRNetworking>)networking {
+    return [self initWithTransports:[[self getDefaultTransports] mutableCopy] andNetworking:networking];
 }
 
 - (instancetype)initWithTransports:(NSMutableArray *)transports {
@@ -154,6 +155,14 @@
 - (void)abort:(id <SRConnectionInterface>)connection timeout:(NSNumber *)timeout connectionData:(NSString *)connectionData {
     SRLogAutoTransport(@"will stop transport");
     [self.transport abort:connection timeout:timeout connectionData:connectionData];
+}
+
+#pragma mark - private methods
+
+- (NSArray *)getDefaultTransports {
+    return @[//[[SRWebSocketTransport alloc] init],
+            //[[SRServerSentEventsTransport alloc] init],
+            [[SRLongPollingTransport alloc] init]];
 }
 
 @end
